@@ -17,9 +17,15 @@ export default function CareerDetailPage() {
   return (
     <Container>
       <h1>{career.company}</h1>
+      {career.pre && (
+        <h3>
+          {career.pre.position} · {career.pre.period}
+        </h3>
+      )}
       <h3>
         {career.position} · {career.period}
       </h3>
+      <br />
       <p>{career.summary}</p>
 
       <SectionTitle>📁 프로젝트</SectionTitle>

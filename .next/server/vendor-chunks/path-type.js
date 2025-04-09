@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/path-type";
+exports.ids = ["vendor-chunks/path-type"];
+exports.modules = {
+
+/***/ "(ssr)/./node_modules/path-type/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/path-type/index.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+eval("\nconst {promisify} = __webpack_require__(/*! util */ \"util\");\nconst fs = __webpack_require__(/*! fs */ \"fs\");\n\nasync function isType(fsStatType, statsMethodName, filePath) {\n\tif (typeof filePath !== 'string') {\n\t\tthrow new TypeError(`Expected a string, got ${typeof filePath}`);\n\t}\n\n\ttry {\n\t\tconst stats = await promisify(fs[fsStatType])(filePath);\n\t\treturn stats[statsMethodName]();\n\t} catch (error) {\n\t\tif (error.code === 'ENOENT') {\n\t\t\treturn false;\n\t\t}\n\n\t\tthrow error;\n\t}\n}\n\nfunction isTypeSync(fsStatType, statsMethodName, filePath) {\n\tif (typeof filePath !== 'string') {\n\t\tthrow new TypeError(`Expected a string, got ${typeof filePath}`);\n\t}\n\n\ttry {\n\t\treturn fs[fsStatType](filePath)[statsMethodName]();\n\t} catch (error) {\n\t\tif (error.code === 'ENOENT') {\n\t\t\treturn false;\n\t\t}\n\n\t\tthrow error;\n\t}\n}\n\nexports.isFile = isType.bind(null, 'stat', 'isFile');\nexports.isDirectory = isType.bind(null, 'stat', 'isDirectory');\nexports.isSymlink = isType.bind(null, 'lstat', 'isSymbolicLink');\nexports.isFileSync = isTypeSync.bind(null, 'statSync', 'isFile');\nexports.isDirectorySync = isTypeSync.bind(null, 'statSync', 'isDirectory');\nexports.isSymlinkSync = isTypeSync.bind(null, 'lstatSync', 'isSymbolicLink');\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvcGF0aC10eXBlL2luZGV4LmpzIiwibWFwcGluZ3MiOiJBQUFhO0FBQ2IsT0FBTyxXQUFXLEVBQUUsbUJBQU8sQ0FBQyxrQkFBTTtBQUNsQyxXQUFXLG1CQUFPLENBQUMsY0FBSTs7QUFFdkI7QUFDQTtBQUNBLGdEQUFnRCxnQkFBZ0I7QUFDaEU7O0FBRUE7QUFDQTtBQUNBO0FBQ0EsR0FBRztBQUNIO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBLGdEQUFnRCxnQkFBZ0I7QUFDaEU7O0FBRUE7QUFDQTtBQUNBLEdBQUc7QUFDSDtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBOztBQUVBLGNBQWM7QUFDZCxtQkFBbUI7QUFDbkIsaUJBQWlCO0FBQ2pCLGtCQUFrQjtBQUNsQix1QkFBdUI7QUFDdkIscUJBQXFCIiwic291cmNlcyI6WyIvVXNlcnMveXVqaW4vRGVza3RvcC9naXRodWIvbXktcG9ydGZvbGlvL25vZGVfbW9kdWxlcy9wYXRoLXR5cGUvaW5kZXguanMiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuY29uc3Qge3Byb21pc2lmeX0gPSByZXF1aXJlKCd1dGlsJyk7XG5jb25zdCBmcyA9IHJlcXVpcmUoJ2ZzJyk7XG5cbmFzeW5jIGZ1bmN0aW9uIGlzVHlwZShmc1N0YXRUeXBlLCBzdGF0c01ldGhvZE5hbWUsIGZpbGVQYXRoKSB7XG5cdGlmICh0eXBlb2YgZmlsZVBhdGggIT09ICdzdHJpbmcnKSB7XG5cdFx0dGhyb3cgbmV3IFR5cGVFcnJvcihgRXhwZWN0ZWQgYSBzdHJpbmcsIGdvdCAke3R5cGVvZiBmaWxlUGF0aH1gKTtcblx0fVxuXG5cdHRyeSB7XG5cdFx0Y29uc3Qgc3RhdHMgPSBhd2FpdCBwcm9taXNpZnkoZnNbZnNTdGF0VHlwZV0pKGZpbGVQYXRoKTtcblx0XHRyZXR1cm4gc3RhdHNbc3RhdHNNZXRob2ROYW1lXSgpO1xuXHR9IGNhdGNoIChlcnJvcikge1xuXHRcdGlmIChlcnJvci5jb2RlID09PSAnRU5PRU5UJykge1xuXHRcdFx0cmV0dXJuIGZhbHNlO1xuXHRcdH1cblxuXHRcdHRocm93IGVycm9yO1xuXHR9XG59XG5cbmZ1bmN0aW9uIGlzVHlwZVN5bmMoZnNTdGF0VHlwZSwgc3RhdHNNZXRob2ROYW1lLCBmaWxlUGF0aCkge1xuXHRpZiAodHlwZW9mIGZpbGVQYXRoICE9PSAnc3RyaW5nJykge1xuXHRcdHRocm93IG5ldyBUeXBlRXJyb3IoYEV4cGVjdGVkIGEgc3RyaW5nLCBnb3QgJHt0eXBlb2YgZmlsZVBhdGh9YCk7XG5cdH1cblxuXHR0cnkge1xuXHRcdHJldHVybiBmc1tmc1N0YXRUeXBlXShmaWxlUGF0aClbc3RhdHNNZXRob2ROYW1lXSgpO1xuXHR9IGNhdGNoIChlcnJvcikge1xuXHRcdGlmIChlcnJvci5jb2RlID09PSAnRU5PRU5UJykge1xuXHRcdFx0cmV0dXJuIGZhbHNlO1xuXHRcdH1cblxuXHRcdHRocm93IGVycm9yO1xuXHR9XG59XG5cbmV4cG9ydHMuaXNGaWxlID0gaXNUeXBlLmJpbmQobnVsbCwgJ3N0YXQnLCAnaXNGaWxlJyk7XG5leHBvcnRzLmlzRGlyZWN0b3J5ID0gaXNUeXBlLmJpbmQobnVsbCwgJ3N0YXQnLCAnaXNEaXJlY3RvcnknKTtcbmV4cG9ydHMuaXNTeW1saW5rID0gaXNUeXBlLmJpbmQobnVsbCwgJ2xzdGF0JywgJ2lzU3ltYm9saWNMaW5rJyk7XG5leHBvcnRzLmlzRmlsZVN5bmMgPSBpc1R5cGVTeW5jLmJpbmQobnVsbCwgJ3N0YXRTeW5jJywgJ2lzRmlsZScpO1xuZXhwb3J0cy5pc0RpcmVjdG9yeVN5bmMgPSBpc1R5cGVTeW5jLmJpbmQobnVsbCwgJ3N0YXRTeW5jJywgJ2lzRGlyZWN0b3J5Jyk7XG5leHBvcnRzLmlzU3ltbGlua1N5bmMgPSBpc1R5cGVTeW5jLmJpbmQobnVsbCwgJ2xzdGF0U3luYycsICdpc1N5bWJvbGljTGluaycpO1xuIl0sIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6WzBdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/path-type/index.js\n");
+
+/***/ })
+
+};
+;

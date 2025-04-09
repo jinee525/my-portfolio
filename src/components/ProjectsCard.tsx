@@ -39,25 +39,22 @@ export default function ProjectCard({
       </InfoRow>
 
       {solutions.length > 0 && (
-        <>
-          <SectionTitle>🧩 문제 해결 사례</SectionTitle>
-          <SolutionTable>
-            <thead>
-              <tr>
-                <th>Needs & Problems</th>
-                <th>Solutions</th>
+        <SolutionTable>
+          <thead>
+            <tr>
+              <th>Needs & Problems</th>
+              <th>Solutions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {solutions.map(([problem, solution], idx) => (
+              <tr key={idx}>
+                <td>{problem}</td>
+                <td>{solution}</td>
               </tr>
-            </thead>
-            <tbody>
-              {solutions.map(([problem, solution], idx) => (
-                <tr key={idx}>
-                  <td>{problem}</td>
-                  <td>{solution}</td>
-                </tr>
-              ))}
-            </tbody>
-          </SolutionTable>
-        </>
+            ))}
+          </tbody>
+        </SolutionTable>
       )}
     </Card>
   );
@@ -128,12 +125,6 @@ const TechTag = styled.span`
   font-size: 0.8rem;
 `;
 
-const SectionTitle = styled.h4`
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  color: #222;
-`;
-
 const SolutionTable = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -156,5 +147,15 @@ const SolutionTable = styled.table`
 
   tr:hover td {
     background-color: #fafafa;
+  }
+
+  th:first-of-type,
+  td:first-of-type {
+    width: 40%; /* 첫 번째 열 (2 비율) */
+  }
+
+  th:last-of-type,
+  td:last-of-type {
+    width: 60%; /* 두 번째 열 (3 비율) */
   }
 `;

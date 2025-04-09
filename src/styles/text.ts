@@ -20,5 +20,6 @@ export const Subtitle = styled.h2`
 
 export const Description = styled.p`
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.3;
+  white-space: pre-line;
 `;

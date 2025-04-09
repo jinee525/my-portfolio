@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/resolve-from";
+exports.ids = ["vendor-chunks/resolve-from"];
+exports.modules = {
+
+/***/ "(ssr)/./node_modules/resolve-from/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/resolve-from/index.js ***!
+  \********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nconst path = __webpack_require__(/*! path */ \"path\");\nconst Module = __webpack_require__(/*! module */ \"module\");\nconst fs = __webpack_require__(/*! fs */ \"fs\");\n\nconst resolveFrom = (fromDir, moduleId, silent) => {\n\tif (typeof fromDir !== 'string') {\n\t\tthrow new TypeError(`Expected \\`fromDir\\` to be of type \\`string\\`, got \\`${typeof fromDir}\\``);\n\t}\n\n\tif (typeof moduleId !== 'string') {\n\t\tthrow new TypeError(`Expected \\`moduleId\\` to be of type \\`string\\`, got \\`${typeof moduleId}\\``);\n\t}\n\n\ttry {\n\t\tfromDir = fs.realpathSync(fromDir);\n\t} catch (err) {\n\t\tif (err.code === 'ENOENT') {\n\t\t\tfromDir = path.resolve(fromDir);\n\t\t} else if (silent) {\n\t\t\treturn null;\n\t\t} else {\n\t\t\tthrow err;\n\t\t}\n\t}\n\n\tconst fromFile = path.join(fromDir, 'noop.js');\n\n\tconst resolveFileName = () => Module._resolveFilename(moduleId, {\n\t\tid: fromFile,\n\t\tfilename: fromFile,\n\t\tpaths: Module._nodeModulePaths(fromDir)\n\t});\n\n\tif (silent) {\n\t\ttry {\n\t\t\treturn resolveFileName();\n\t\t} catch (err) {\n\t\t\treturn null;\n\t\t}\n\t}\n\n\treturn resolveFileName();\n};\n\nmodule.exports = (fromDir, moduleId) => resolveFrom(fromDir, moduleId);\nmodule.exports.silent = (fromDir, moduleId) => resolveFrom(fromDir, moduleId, true);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvcmVzb2x2ZS1mcm9tL2luZGV4LmpzIiwibWFwcGluZ3MiOiJBQUFhO0FBQ2IsYUFBYSxtQkFBTyxDQUFDLGtCQUFNO0FBQzNCLGVBQWUsbUJBQU8sQ0FBQyxzQkFBUTtBQUMvQixXQUFXLG1CQUFPLENBQUMsY0FBSTs7QUFFdkI7QUFDQTtBQUNBLDhFQUE4RSxlQUFlO0FBQzdGOztBQUVBO0FBQ0EsK0VBQStFLGdCQUFnQjtBQUMvRjs7QUFFQTtBQUNBO0FBQ0EsR0FBRztBQUNIO0FBQ0E7QUFDQSxJQUFJO0FBQ0o7QUFDQSxJQUFJO0FBQ0o7QUFDQTtBQUNBOztBQUVBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsRUFBRTs7QUFFRjtBQUNBO0FBQ0E7QUFDQSxJQUFJO0FBQ0o7QUFDQTtBQUNBOztBQUVBO0FBQ0E7O0FBRUE7QUFDQSxxQkFBcUIiLCJzb3VyY2VzIjpbIi9Vc2Vycy95dWppbi9EZXNrdG9wL2dpdGh1Yi9teS1wb3J0Zm9saW8vbm9kZV9tb2R1bGVzL3Jlc29sdmUtZnJvbS9pbmRleC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5jb25zdCBwYXRoID0gcmVxdWlyZSgncGF0aCcpO1xuY29uc3QgTW9kdWxlID0gcmVxdWlyZSgnbW9kdWxlJyk7XG5jb25zdCBmcyA9IHJlcXVpcmUoJ2ZzJyk7XG5cbmNvbnN0IHJlc29sdmVGcm9tID0gKGZyb21EaXIsIG1vZHVsZUlkLCBzaWxlbnQpID0+IHtcblx0aWYgKHR5cGVvZiBmcm9tRGlyICE9PSAnc3RyaW5nJykge1xuXHRcdHRocm93IG5ldyBUeXBlRXJyb3IoYEV4cGVjdGVkIFxcYGZyb21EaXJcXGAgdG8gYmUgb2YgdHlwZSBcXGBzdHJpbmdcXGAsIGdvdCBcXGAke3R5cGVvZiBmcm9tRGlyfVxcYGApO1xuXHR9XG5cblx0aWYgKHR5cGVvZiBtb2R1bGVJZCAhPT0gJ3N0cmluZycpIHtcblx0XHR0aHJvdyBuZXcgVHlwZUVycm9yKGBFeHBlY3RlZCBcXGBtb2R1bGVJZFxcYCB0byBiZSBvZiB0eXBlIFxcYHN0cmluZ1xcYCwgZ290IFxcYCR7dHlwZW9mIG1vZHVsZUlkfVxcYGApO1xuXHR9XG5cblx0dHJ5IHtcblx0XHRmcm9tRGlyID0gZnMucmVhbHBhdGhTeW5jKGZyb21EaXIpO1xuXHR9IGNhdGNoIChlcnIpIHtcblx0XHRpZiAoZXJyLmNvZGUgPT09ICdFTk9FTlQnKSB7XG5cdFx0XHRmcm9tRGlyID0gcGF0aC5yZXNvbHZlKGZyb21EaXIpO1xuXHRcdH0gZWxzZSBpZiAoc2lsZW50KSB7XG5cdFx0XHRyZXR1cm4gbnVsbDtcblx0XHR9IGVsc2Uge1xuXHRcdFx0dGhyb3cgZXJyO1xuXHRcdH1cblx0fVxuXG5cdGNvbnN0IGZyb21GaWxlID0gcGF0aC5qb2luKGZyb21EaXIsICdub29wLmpzJyk7XG5cblx0Y29uc3QgcmVzb2x2ZUZpbGVOYW1lID0gKCkgPT4gTW9kdWxlLl9yZXNvbHZlRmlsZW5hbWUobW9kdWxlSWQsIHtcblx0XHRpZDogZnJvbUZpbGUsXG5cdFx0ZmlsZW5hbWU6IGZyb21GaWxlLFxuXHRcdHBhdGhzOiBNb2R1bGUuX25vZGVNb2R1bGVQYXRocyhmcm9tRGlyKVxuXHR9KTtcblxuXHRpZiAoc2lsZW50KSB7XG5cdFx0dHJ5IHtcblx0XHRcdHJldHVybiByZXNvbHZlRmlsZU5hbWUoKTtcblx0XHR9IGNhdGNoIChlcnIpIHtcblx0XHRcdHJldHVybiBudWxsO1xuXHRcdH1cblx0fVxuXG5cdHJldHVybiByZXNvbHZlRmlsZU5hbWUoKTtcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gKGZyb21EaXIsIG1vZHVsZUlkKSA9PiByZXNvbHZlRnJvbShmcm9tRGlyLCBtb2R1bGVJZCk7XG5tb2R1bGUuZXhwb3J0cy5zaWxlbnQgPSAoZnJvbURpciwgbW9kdWxlSWQpID0+IHJlc29sdmVGcm9tKGZyb21EaXIsIG1vZHVsZUlkLCB0cnVlKTtcbiJdLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOlswXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/resolve-from/index.js\n");
+
+/***/ })
+
+};
+;
