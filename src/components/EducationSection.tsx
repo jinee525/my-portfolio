@@ -39,7 +39,7 @@ export default function EducationSection() {
       </Section>
 
       <Section>
-        <SectionTitle>🧠 UX/UI Projects & AI Projects</SectionTitle>
+        <SectionTitle>🎨 UX/UI Projects</SectionTitle>
         <FlexContainer>
           {UXProjects.map((project, index) => (
             <ProjectCard key={index} {...project} />
