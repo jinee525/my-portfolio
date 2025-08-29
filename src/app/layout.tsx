@@ -6,7 +6,7 @@ import { Global } from "@emotion/react";
 import { globalStyles } from "./globalStyles";
 import Chatbot from "@/components/Chatbot";
 import Header from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
+// import ScrollToTop from "@/components/ScrollToTop";
 import styled from "@emotion/styled";
 import { usePathname } from "next/navigation";
 
