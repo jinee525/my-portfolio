@@ -127,7 +127,9 @@ export default function Chatbot() {
       {isOpen && (
         <ChatWindow>
           <ChatHeader>
-            <HeaderTitle>💬 박유진과 지금 대화하기</HeaderTitle>
+            <HeaderTitle>
+              💬 박유진과 지금 대화하기 (gpt-3.5-turbo-0125)
+            </HeaderTitle>
             <CloseButton onClick={() => setIsOpen(false)}>✕</CloseButton>
           </ChatHeader>
 
